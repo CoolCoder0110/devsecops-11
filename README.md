@@ -8,7 +8,7 @@ graph TD;
     A[Utvecklare] -->|Push kod till Main| B(GitHub Repository)
     B -->|Triggar Pipeline| C[GitHub Actions CI/CD]
     
-    subgap CI [Pipeline Checks]
+    subgraph CI [Pipeline Checks]
         C -->|1. SAST Scan| D{Bandit Python}
         D -->|Ok| E[2. Bygg Docker Image]
         E -->|3. SBOM| F[Generera & Ladda upp CycloneDX]
