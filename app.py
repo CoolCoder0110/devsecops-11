@@ -21,4 +21,5 @@ def trigger_error():
     return {"status": "error", "message": "Simulerat fel under demo!"}, 500
 
 if __name__ == "__main__":
+    # nosec B104 (Binder till alla nätverkskort, designat i Docker/Kubernetes)
     app.run(host="0.0.0.0", port=5000)
