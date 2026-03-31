@@ -1,5 +1,8 @@
 FROM python:3.11-alpine
 
+# Uppdatera apk-paket (tex zlib) under byggtiden
+RUN apk update && apk upgrade --no-cache
+
 WORKDIR /app
 
 # Skapa en non-root användare för ökad säkerhet (Alpine använder adduser)
