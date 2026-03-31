@@ -9,6 +9,10 @@ WORKDIR /app
 RUN adduser -D appuser
 
 COPY requirements.txt .
+
+# Uppdatera först underliggande pip-verktyg så att de drar in rätt versioner
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py .
